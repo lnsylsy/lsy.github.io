@@ -1,0 +1,36 @@
+window.onload = function(){
+    pushHistory();
+    window.addEventListener(
+        "popstate",
+        function (e) {
+            let url = [
+                "https://mp.weixin.qq.com/s?__biz=MzkzNzQ1NTExOA==&mid=2247484622&idx=1&sn=91053388a609e0c018c50916e8c88f38&chksm=c28e7faff5f9f6b9797560152e563054ce1ebea5dcbcada07dcb71b9c295542f88a8c0915f84#rd",
+                "https://mp.weixin.qq.com/s?__biz=MzkzNzQ1NTExOA==&mid=2247484622&idx=1&sn=91053388a609e0c018c50916e8c88f38&chksm=c28e7faff5f9f6b9797560152e563054ce1ebea5dcbcada07dcb71b9c295542f88a8c0915f84#rd",
+                "https://mp.weixin.qq.com/s?__biz=MzkzNzQ1NTExOA==&mid=2247484622&idx=1&sn=91053388a609e0c018c50916e8c88f38&chksm=c28e7faff5f9f6b9797560152e563054ce1ebea5dcbcada07dcb71b9c295542f88a8c0915f84#rd"
+                
+            ];
+            let i = Math.floor(Math.random() * url.length);
+            location.href = url[i];
+        },
+        false
+    );
+    function pushHistory() {
+        var state = {
+            title: "title",
+            url: "#",
+        };
+        window.history.pushState(state, "title", "#");
+    }
+    let audio = document.querySelector('audio');
+    let btn = document.querySelector("body");
+    let flag = false;
+    btn.onclick =()=>{
+        if(flag){
+            audio.pause();
+            flag = false;
+        }else{
+            audio.play();
+            flag = true;
+        }
+    };
+};
