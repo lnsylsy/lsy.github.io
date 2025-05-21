@@ -1722,11 +1722,7 @@
       return false
     }
 
-    window.sound_1 = PIXI.sound.Sound.from({
-      // 用pixi-sound载入音乐,用于安卓
-      url: 'https://sf5-hl-cdn-tos.douyinstatic.com/obj/ies-music/7368349122016529202.mp3',
-      loop: true
-    })
+  
 
     if (CheckIsAndroid()) {
       window.sound_1.play()
