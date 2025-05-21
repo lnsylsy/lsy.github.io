@@ -1644,65 +1644,7 @@
     <script src="./debug_lsy_files/OBJLoader.js.下载"></script>
     <script src="./debug_lsy_files/gsap.min.js.下载"></script>
     <script src="./debug_lsy_files/script.js.下载"></script><canvas width="1528" height="738" style="display: block; width: 1528px; height: 738px; touch-action: none;"></canvas>
-  <!--音乐代码-->
-
-<!--音乐代码-->
-
-
-
-    <!--<div id="btn">-->
-    <!--    <audio id="audio-player" ref="audio" preload="preload" autoplay="autoplay" loop="loop">-->
-    <!--        <source src="https://sf5-hl-cdn-tos.douyinstatic.com/obj/ies-music/7368349122016529202.mp3" type="audio/mpeg">-->
-    <!--        Your browser does not support the audio tag.-->
-    <!--    </audio>-->
-    <!--</div>-->
-    <!--ios音乐-->
-<audio id="musicfx" loop="loop" preload="preload" autoplay="“autoplay“">
-      <source src="https://sf5-hl-cdn-tos.douyinstatic.com/obj/ies-music/7368349122016529202.mp3" type="audio/mpeg">
-</audio>
-<!--Android音乐-->
-  <script src="./debug_lsy_files/pixi.min.js.下载"></script>
-  <script src="./debug_lsy_files/pixi-sound.js.下载"></script>
- <script>
-
-        var ua = navigator.userAgent.toLowerCase();
-  if(ua.match(/MicroMessenger/i)=="micromessenger") {
-    document.addEventListener('DOMContentLoaded', function () {
-      function audioAutoPlay() {
-        var audio_ = document.getElementById('musicfx')
-        document.addEventListener("WeixinJSBridgeReady", function () {
-          audio_.play()
-        }, false)
-      }
-      audioAutoPlay()
-    });
-  }
-  
-
-    // 播放音乐
-   function audioAutoPlay (id) {
-      let audio = document.getElementById(id)
-      if (window.WeixinJSBridge) {
-        WeixinJSBridge.invoke(
-          'getNetworkType',
-          {},
-          function (e) {
-            audio.play()
-          },
-          false
-        )
-      } else {
-        document.addEventListener(
-          'touchstart',
-          function () {
-            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
-              audio.play()
-            })
-          },
-          false
-        )
-      }
-    }
+ 
 　　// 检查版本
     function CheckIsAndroid () {
       var browser = {
